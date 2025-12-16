@@ -1,0 +1,31 @@
+### Health
+GET http://localhost:3000/
+
+### Create a Post
+POST http://localhost:3000/post
+Content-Type: application/json
+
+{
+  "title": "First post",
+  "content": "Hello world",
+  "sender": "user123"
+}
+
+### Get All Posts
+GET http://localhost:3000/post
+
+### Get Posts by Sender
+GET http://localhost:3000/post?sender=user123
+
+### Get Post by ID
+GET http://localhost:3000/post/{{postId}}
+
+### Update Post (PUT)
+PUT http://localhost:3000/post/{{postId}}
+Content-Type: application/json
+
+{
+  "title": "Updated title",
+  "content": "Updated content",
+  "sender": "user123"
+}
