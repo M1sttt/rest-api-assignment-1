@@ -4,7 +4,6 @@ const mongoose = require("mongoose");
 const Comment = require("../models/comment");
 const Post = require("../models/post");
 
-// Create comment
 router.post("/", async (req, res) => {
   try {
     const { postId, sender, content } = req.body;
@@ -27,7 +26,6 @@ router.post("/", async (req, res) => {
   }
 });
 
-// Get all comments or by post: /comment?postId=<postId>
 router.get("/", async (req, res) => {
   try {
     const filter = {};
@@ -43,7 +41,6 @@ router.get("/", async (req, res) => {
   }
 });
 
-// Get comment by id
 router.get("/:id", async (req, res) => {
   try {
     const id = req.params.id;
@@ -57,7 +54,6 @@ router.get("/:id", async (req, res) => {
   }
 });
 
-// Update comment (PUT)
 router.put("/:id", async (req, res) => {
   try {
     const id = req.params.id;
@@ -87,7 +83,6 @@ router.put("/:id", async (req, res) => {
   }
 });
 
-// Delete comment
 router.delete("/:id", async (req, res) => {
   try {
     const id = req.params.id;
